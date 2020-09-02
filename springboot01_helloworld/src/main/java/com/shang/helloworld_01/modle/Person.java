@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@PropertySource(value = {"classpath:person.properties"})//读取指定的properties文件，不写的话，默认从全局配置文件中获取
+//@PropertySource(value = {"classpath:person.properties"})//读取指定的properties文件，不写的话，默认从全局配置文件中获取
 @Component  // 将组件加入容器中；才能使用@ConfigurationProperties功能
 @ConfigurationProperties(prefix = "person")  //本类中的属性在配置文件中获取 ,可个给单个属性添加注解
 public class Person {
@@ -27,6 +27,18 @@ public class Person {
     private List<Object> lists;
 
     private Dog dog;
+
+    public Person() {
+    }
+
+    public Person(Integer age, Boolean boss, Date birth, Map<String, Object> maps, List<Object> lists, Dog dog) {
+        this.age = age;
+        this.boss = boss;
+        this.birth = birth;
+        this.maps = maps;
+        this.lists = lists;
+        this.dog = dog;
+    }
 
     public String getName() {
         return name;

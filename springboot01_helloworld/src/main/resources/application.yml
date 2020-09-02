@@ -1,7 +1,22 @@
 #空格控制  大小写敏感 字符串默认不加单/双引号  双引号不转义  单引号转义
+
 server:
   port: 8081
+spring:
+  profiles:
+    active: dev
 
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
+---
+server:
+  port: 8084
+spring:
+  profiles: prod
+---
 #对象
 friends:
   name: zhangsan
@@ -18,15 +33,17 @@ pets:
 #数组行内写法
 pets1: [cat,dog,pig]
 
-person:
-  name: shang
-  age: 18
-  boss: true
-  birth: 2002/12/06
-  map: {k1: 1, k2: 2}
-  lists:
-    - shang
-    - jia
-  dog:
-    name: 小狗
-    age: 2
+#person:
+#  name: shang
+#  age: 18
+#  boss: true
+#  birth: 2002/12/06
+#  map: {k1: 1, k2: 2}
+#  lists:
+#    - shang
+#    - jia
+#  dog:
+#    name: 小狗
+
+
+#    age: 2
